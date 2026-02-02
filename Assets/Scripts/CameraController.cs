@@ -6,6 +6,11 @@ public class CameraController : MonoBehaviour
     public float followSpeed;
     public float rotationSpeed;
 
+    private void Start()
+    {
+        transform.parent = null; //detach from parent
+    }
+
     private void LateUpdate() //update after all gamelogic
     {
         transform.position = Vector3.Lerp(transform.position, target.position, followSpeed * Time.deltaTime);

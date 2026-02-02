@@ -50,6 +50,17 @@
                 },
                 {
                     "name": "",
+                    "id": "87a43d4b-e660-466a-b824-b3eadc4fbace",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";ArrowKeys",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "50cb79cb-5e44-4718-8787-78ee537ed60b",
                     "path": "<Gamepad>/leftStick/x",
                     "interactions": "",
@@ -91,6 +102,39 @@
                     "action": "Turn",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "dfaa0ed2-5a80-4b33-9842-c992a4ca3fb0",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "d5556e97-38d0-48d6-bccf-54523dce1973",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";ArrowKeys",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "85888d48-076a-4c22-b561-4b8981817eeb",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";ArrowKeys",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
@@ -117,6 +161,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "ArrowKeys",
+            "bindingGroup": "ArrowKeys",
+            "devices": []
         }
     ]
 }

@@ -165,7 +165,13 @@
         {
             "name": "ArrowKeys",
             "bindingGroup": "ArrowKeys",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }

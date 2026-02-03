@@ -6,10 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public List<CarController> cars = new List<CarController>();
 
+    public Transform[] spawnPoints;
+
 
     public float posUpdateRate = 0.05f;
     private float lastPosUpdateTime;
 
+    public int playersToBegin = 2;
+    public bool gameStarted = false;
 
 
     public static GameManager instance;
@@ -35,8 +39,31 @@ public class GameManager : MonoBehaviour
             UpdateCarRacePos();
         }
 
+        if (!gameStarted && cars.Count == playersToBegin)
+        {
+            gameStarted = true;
+            StartCountDown();
+        }
+
     }
 
+    void StartCountDown()
+    {
+        PlayerUi[] uis = FindObjectsOfType<PlayerUi>();
+        foreach (PlayerUi ui in uis)
+        {
+            ui.StartCountDownDisplay();
+        }
+        Invoke("StartRace", 3.0f);
+    }
+
+    void StartRace()
+    {
+        foreach (CarController car in cars)
+        {
+            car.canControl = true;
+        }
+    }
     void UpdateCarRacePos()
     {
         cars.Sort(SortPos);

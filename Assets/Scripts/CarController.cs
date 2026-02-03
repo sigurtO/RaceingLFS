@@ -21,6 +21,8 @@ public class CarController : MonoBehaviour
     public int racePos;
     public int curLap;
 
+    public bool canControl;
+
     public Rigidbody rb;
 
 
@@ -30,9 +32,14 @@ public class CarController : MonoBehaviour
         curYRotate = carModel.transform.eulerAngles.y;
 
         GameManager.instance.cars.Add(this);
+        transform.position = GameManager.instance.spawnPoints[GameManager.instance.cars.Count - 1].position;
     }
     private void Update()
     {
+        if(!canControl)
+        {
+            return;
+        }
         float turnRate = Vector3.Dot(rb.linearVelocity.normalized, carModel.forward); // get number between -1 and 1 based on car moving forward or backward
         turnRate = Mathf.Abs(turnRate); // make it always positive
 
@@ -45,6 +52,10 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!canControl)
+        {
+            turnInput = 0.0f;
+        }
         if (accelerateInput)
         {
             rb.AddForce(carModel.forward * acceleration, ForceMode.Acceleration);

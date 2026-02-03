@@ -4617,6 +4617,7 @@ GameObject:
   - component: {fileID: 1274296071}
   - component: {fileID: 1274296072}
   - component: {fileID: 1274296073}
+  - component: {fileID: 1274296074}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4697,6 +4698,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   cars: []
   posUpdateRate: 0.05
+--- !u!114 &1274296074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274296070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86087f94fbe5dce46898d17ba2ca35f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SplitScreenManager
+  carPrefab: {fileID: 1485769456}
 --- !u!1001 &1275154294
 PrefabInstance:
   m_ObjectHideFlags: 0

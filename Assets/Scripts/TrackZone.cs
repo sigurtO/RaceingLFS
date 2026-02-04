@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class TrackZone : MonoBehaviour
 {
+
+    public bool isGate;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -9,6 +12,12 @@ public class TrackZone : MonoBehaviour
             CarController car = other.GetComponent<CarController>();
             car.currentTrackZone = this;
             car.zonesPassed ++;
+
+            if(  isGate) 
+            {
+                car.curLap ++;
+                GameManager.instance.CheckIsWinner(car);
+            }
         }
     }
 

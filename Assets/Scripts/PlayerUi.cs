@@ -9,6 +9,8 @@ public class PlayerUi : MonoBehaviour
 
     public TextMeshProUGUI countDownText;
 
+    public TextMeshProUGUI winnerText;
+
     void Update()
     {
         rankText.text = "Position: " + playerCar.racePos.ToString() + "/" + GameManager.instance.cars.Count.ToString();
@@ -30,5 +32,12 @@ public class PlayerUi : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             countDownText.gameObject.SetActive(false);
         }
+    }
+
+    public void GameOverUi(bool winner)
+    {
+        winnerText.gameObject.SetActive(true);
+        winnerText.text = winner == true ? "You Win!" : "You Lose!";
+        winnerText.color = winner == true ? Color.green : Color.red;
     }
 }
